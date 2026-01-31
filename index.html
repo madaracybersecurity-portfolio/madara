@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            log in
+        </title>
+        <meta charset="UTF-8" >
+        <meta name="author" content="sabrine elfahli 24008313">
+
+<style>
+#v{
+  object-fit:cover ;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+
+}
+   .box{   
+    border-radius:15px;
+    border:2px solid rgb(171, 133, 149);
+    backdrop-filter: blur(15px);
+    box-shadow: 5px;
+    width:850px;
+    height: 300px;
+    background-color: rgb(159, 124, 168,0,9);
+    display:flex;
+    z-index: 1;
+    margin: auto;
+    
+   }
+  .box::before{
+    
+  }
+
+
+   input,button{
+    width:max-content;
+    height: max-content;
+    margin:auto;
+   }
+   span{
+    margin: auto;
+
+   }
+
+</style>
+
+
+
+
+
+    </head>
+    <body>
+      <video id="v" autoplay muted loop >
+<source src="3aman.mp4" type="video/mp4">
+      </video>
+      <button onclick="on()">🔊</button>
+    <div class="box">
+<input type="number"  id="a" >
+<span>x^2</span> 
+<input type="number" id="b">
+<span>X+</span>
+<input type="number" id="c" >
+<span>=0</span>
+
+<button onclick="repond()">resoudre</button>
+<input type="text" holdplace="reponse" id="d">
+</div> 
+
+<script>
+function repond(){
+  let a=Number(document.getElementById("a").value);
+let b=Number(document.getElementById("b").value);
+let c=Number(document.getElementById("c").value);
+let rs=document.getElementById("d").value;
+let delta=0;
+let s1=0;
+let s2=0;
+delta=b*b-(4*a*c);
+
+if(delta>0) {
+  s1=(-b-Math.sqrt(delta))/(2*a);
+  s2=(-b+Math.sqrt(delta))/(2*a);
+document.getElementById("d").value=s1,s2;
+}
+else if(delta==0){
+  s1=-b/(2*a);
+  document.getElementById("d").value=s1;
+
+}
+else if(delta<0){
+  document.getElementById("d").value="no result in R";
+}
+
+
+
+}
+function on(){
+  let one=document.getElementById("v");
+  
+  one.muted=!one.muted;
+}
+
+</script>
+
+       
+        
+   
+    </body>
+</html>
+
+
